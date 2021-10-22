@@ -4,15 +4,16 @@ import { useState } from "react";
 import Menu from "../Components/Menu";
 
 import styled from "styled-components";
-import greenshoes from "../Images/bkackshoes.png";
+import greenshoes from "../Images/blackshoes.svg";
 export default function BlackPage() {
   const [Click, setClick] = useState(false);
+  const boder = "boder3";
 
   return (
     <BgContainer>
       <Menu Click={Click} />
       <Topbar Click={Click} setClick={setClick} />
-      <Hero Img={greenshoes} />
+      <Hero Img={greenshoes} boder={boder}/>
     </BgContainer>
   );
 }

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
 
 export const HeroContainer = styled.div`
   width: 100%;
@@ -22,18 +24,17 @@ export const HeroBg = styled.img`
   }
 `;
 
-export const BigShoes = styled.img`
+export const BigShoes = styled(motion.img)`
   width: 313px;
   position: absolute;
   background-color: transparent;
   margin-bottom: 71px;
-
   @media (min-width: 1025px) {
     width: 745px;
   }
 `;
 
-export const LogoNameWrapper = styled.div`
+export const LogoNameWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -68,7 +69,7 @@ export const LogoDescription = styled.h1`
   }
 `;
 
-export const SmallShoesPickerWrapper = styled.div`
+export const SmallShoesPickerWrapper = styled(motion.div)`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -79,7 +80,7 @@ export const SmallShoesPickerWrapper = styled.div`
 
 export const SmallShoesPicker = styled.div`
   border-radius: 16px;
-  background-color: #ceeb84;
+  background-color: #e5e5e5;
   width: 350px;
   height: 90px;
   display: flex;
@@ -94,7 +95,7 @@ export const SmallShoes = styled.img`
 `;
 
 export const Line = styled.div`
-  border: 3px solid #1c1e1a;
+  /* border: 3px solid #1c1e1a; */
   margin-left: 20px;
   margin-top: 7px;
   height: 70px;

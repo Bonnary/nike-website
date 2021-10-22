@@ -16,20 +16,32 @@ import {
 } from "./Hero.style";
 
 import bg from "../Images/Logo.svg";
-// import redshoes from "../Images/redshoes.png";
-// import blackshoes from "../Images/blackshoes.png";
-
-export default function Hero({Img}) {
+import LeftSidebar from "./LeftSidebar";
+export default function Hero({ Img, boder }) {
   return (
     <HeroContainer>
       <HeroWrapper>
-        <LogoNameWrapper>
+        <LogoNameWrapper
+          variants={downVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <LogoName>NIKE</LogoName>
           <LogoDescription>SUPERREP</LogoDescription>
         </LogoNameWrapper>
-        <BigShoes src={Img} />
+        <BigShoes
+          src={Img}
+          variants={downVariants}
+          initial="hidden"
+          animate="visible"
+        />
+        <LeftSidebar boder={boder}/>
         <HeroBg src={bg} />
-        <SmallShoesPickerWrapper>
+        <SmallShoesPickerWrapper
+          variants={upVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <SmallShoesPicker>
             <SmallShoes src={Img} />
             <Line />
@@ -38,24 +50,40 @@ export default function Hero({Img}) {
               <Text>$1449</Text>
             </TextWrapper>
           </SmallShoesPicker>
-          {/* <SmallShoesPicker>
-            <SmallShoes src={redshoes} />
-            <Line />
-            <TextWrapper>
-              <Text>Nike Hyperace</Text>
-              <Text>$1789</Text>
-            </TextWrapper>
-          </SmallShoesPicker>
-          <SmallShoesPicker>
-            <SmallShoes src={blackshoes} />
-            <Line />
-            <TextWrapper>
-              <Text>Nike Hyperblack</Text>
-              <Text>$2449</Text>
-            </TextWrapper>
-          </SmallShoesPicker> */}
         </SmallShoesPickerWrapper>
       </HeroWrapper>
     </HeroContainer>
   );
 }
+
+const downVariants = {
+  hidden: {
+    opacity: 0,
+    y: "-50px",
+  },
+  visible: {
+    opacity: 1,
+    y: "0px",
+    transition: {
+      duration: 1,
+      type: "spring",
+      stiffness: 120,
+    },
+  },
+};
+
+const upVariants = {
+  hidden: {
+    opacity: 0,
+    y: "50px",
+  },
+  visible: {
+    opacity: 1,
+    y: "0px",
+    transition: {
+      duration: 1,
+      type: "spring",
+      stiffness: 120,
+    },
+  },
+};
