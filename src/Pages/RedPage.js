@@ -4,7 +4,7 @@ import { useState } from "react";
 import Menu from "../Components/Menu";
 
 import styled from "styled-components";
-import greenshoes from "../Images/redshoes.svg";
+import greenshoes from "../Images/redshoes.png";
 export default function RedPage() {
   const [Click, setClick] = useState(false);
   const boder = "boder2";
